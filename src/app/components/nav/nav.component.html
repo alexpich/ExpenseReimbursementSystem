@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ERS</a>
+  <div class="navbar-collapse">
+    <div class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/landing">Home</a>
+        </li>
+        <li *ngIf="!loggedIn" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!loggedIn" class="nav-item">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li *ngIf="loggedIn && loggedUser.user_role_id == 1" class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li *ngIf="loggedIn && loggedUser.user_role_id == 2" class="nav-item">
+          <a class="nav-link" routerLink="/master-dashboard">M-Dashboard</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

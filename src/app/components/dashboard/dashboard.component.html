@@ -1,0 +1,26 @@
+<h3>User Dashboard</h3>
+
+<div class="alert alert-success">
+  Welcome, {{ loggedUser.ers_username }}
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="white-box format-box">
+        <ul>
+          <li>
+            <a routerLink="/reimbursements">View Your Tickets</a>
+          </li>
+          <li>
+            <a routerLink="/new-reimbursement">Add Reimbursement Request</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

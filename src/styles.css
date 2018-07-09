@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  /* background-color: aquamarine; */
+}
+
+.white-box {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  /* Shadow/blur */
+  -webkit-box-shadow: 11px 11px 20px 1px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 11px 11px 20px 1px rgba(0, 0, 0, 0.29);
+  box-shadow: 11px 11px 20px 1px rgba(0, 0, 0, 0.29);
+}
+
+.format-box {
+  margin: 40px 0;
+  padding: 20px;
+}

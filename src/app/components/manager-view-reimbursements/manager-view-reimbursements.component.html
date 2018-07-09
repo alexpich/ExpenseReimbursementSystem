@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-12">
+      <br>
+      <button class="btn btn-warning btn-sm" (click)="goBack()">go back</button>
+      <div class="white-box format-box table-responsive">
+        <h3 class="text-center">
+          All Pending Reimbursements
+        </h3>
+        <button class="btn btn-info btn-sm" (click)="changeAll()">All</button>
+        <button class="btn btn-info btn-sm" (click)="changePending()">Pending</button>
+        <button class="btn btn-info btn-sm" (click)="changeApproved()">Approved</button>
+        <button class="btn btn-info btn-sm" (click)="changeDenied()">Denied</button>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID #</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Submitted</th>
+              <th scope="col">Resolved</th>
+              <th scope="col">Description</th>
+              <th scope="col">Requester</th>
+              <th scope="col">Resolver</th>
+              <th scope="col">Status</th>
+              <th scope="col">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of loggedUser.myReimb | filterPipe:selected">
+              <td>{{ r.reimb_id }}</td>
+              <td>{{ r.reimb_amount | currency:'USD'}}</td>
+              <td>{{ r.reimb_submitted | date:'medium'}}</td>
+              <td>{{ r.reimb_resolved | date:'medium'}}</td>
+              <td>{{ r.reimb_description}}</td>
+              <td>{{ r.reimb_author}}</td>
+              <td>{{ r.reimb_resolver }}</td>
+              <td>{{ status[r.reimb_status_id - 1] }}</td>
+              <td>{{ type[r.reimb_type_id - 1] }}</td>
+              <td>
+                <button class="btn btn-success btn-sm" (click)="approve(r)">Approve</button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="deny(r)">Deny</button>
+              </td>
+            </tr>
+            <tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>

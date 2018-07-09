@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <br>
+      <button class="btn btn-warning btn-sm" (click)="goBack()">go back</button>
+    </div>
+    <div class="col-sm-8">
+      <div class="white-box format-box">
+        <form>
+          <h2 class="format-center">New Request</h2>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control" id="amount" name="reimb.reimb_amount" [(ngModel)]="reimb.reimb_amount">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" name="reimb.reimb_description" [(ngModel)]="reimb.reimb_description">
+          </div>
+
+          <!-- <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <select class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle name="reimb.reimb_type_id" [(ngModel)]="reimb.reimb_type_id">Type
+                </select>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <option *ngFor="let option of options" class="dropdown-item">{{option.name }}</option>
+                  </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="form-group">
+            <label for="type">Type (1 - Lodging, 2 - Travel, 3 - Food, 4- Other):</label>
+            <select class="btn btn-outline" name="option-type" [(ngModel)]="reimb.reimb_type_id">
+              <option *ngFor="let option of options">{{ option.value }}</option>
+            </select>
+          </div>
+
+
+          <br>
+
+
+
+          <button id="login" class="form-control btn btn-success" type="submit" (click)="addReimb()">Submit</button>
+
+        </form>
+
+      </div>
+
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

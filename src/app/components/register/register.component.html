@@ -1,0 +1,30 @@
+<!-- This page will only be available to the admin -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="white-box format-box">
+        <!--REGISTER FORM -->
+        <form>
+          <h2 class="format-center">Register</h2>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input class="form-control" id="newuser" type="text" name="user.ers_username" [(ngModel)]="user.ers_username">
+            <label>Password:</label>
+            <input class="form-control" type="password" name="user.ers_password" [(ngModel)]="user.ers_password">
+            <label>First Name:</label>
+            <input class="form-control" type="text" name="user.user_first_name" [(ngModel)]="user.user_first_name">
+            <label>Last Name:</label>
+            <input class="form-control" type="text" name="user.user_last_name" [(ngModel)]="user.user_last_name">
+            <label>Email:</label>
+            <input class="form-control" type="text" name="user.user_email" [(ngModel)]="user.user_email">
+            <br>
+            <button id="register" class="form-control btn btn-success" type="submit" (click)="register()">Signup</button>
+          </div>
+        </form>
+        <!-- End register form -->
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
